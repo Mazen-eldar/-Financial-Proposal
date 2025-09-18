@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Proposal - Mazen El_dar</title>
+    <style>
+        body {
+            font-family: 'Calibri', Arial, sans-serif;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 30px;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .header {
+            text-align: center;
+            border: 3px solid #1f4e79;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
+        }
+        
+        .header h1 {
+            color: #1f4e79;
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .main-heading {
+            color: #1f4e79;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4472c4;
+            padding-bottom: 5px;
+        }
+        
+        .sub-heading {
+            color: #4472c4;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .content {
+            font-size: 11pt;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pricing-card {
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border-color: #4472c4;
+            background: linear-gradient(135deg, #e8f4f8 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .featured::before {
+            content: "⭐ POPULAR";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4472c4;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        
+        .package-name {
+            color: #1f4e79;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .package-price {
+            color: #27ae60;
+            font-size: 20pt;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .package-duration {
+            color: #666;
+            font-size: 11pt;
+            margin-bottom: 15px;
+        }
+        
+        .package-features {
+            text-align: left;
+            margin: 15px 0;
+        }
+        
+        .package-features li {
+            font-size: 10pt;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .hourly-section {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%);
+            border: 2px solid #f0c14b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .hourly-rate {
+            color: #b8860b;
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11pt;
+        }
+        
+        .payment-table th {
+            background-color: #1f4e79;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .payment-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .payment-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .value-box {
+            background: linear-gradient(135deg, #d4edda 0%, #ffffff 100%);
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .guarantee-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%);
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #1f4e79 0%, #4472c4 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .contact-box h2 {
+            margin-top: 0;
+            color: white;
+            font-size: 18pt;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            font-size: 10pt;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .currency-note {
+            background: #e8f4f8;
+            color: #1f4e79;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .flex-container {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .flex-item {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4472c4;
+        }
+        
+        @media (max-width: 600px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💰 Financial Proposal</h1>
+        <p style="font-size: 14pt; color: #4472c4; margin: 10px 0 0 0;">Full-Stack .NET Development Services - Pricing Structure</p>
+    </div>
+
+    <div class="currency-note">
+        💱 <strong>Currency:</strong> USD ($) | <strong>Payment Models:</strong> Hourly Rate & Project-Based Packages
+    </div>
+
+    <div class="main-heading">💼 Flexible Payment Options</div>
+
+    <div class="hourly-section">
+        <div class="sub-heading" style="color: #b8860b; text-align: center;">⏰ Option 1: Hourly Rate</div>
+        <div class="hourly-rate">$15 / hour</div>
+        <p style="color: #666; font-size: 11pt; margin: 10px 0;">
+            <strong>Perfect for:</strong> Projects with evolving requirements, consulting, maintenance, or custom development needs
+        </p>
+        <div style="font-size: 10pt; color: #888;">
+            *Rate may vary based on project complexity and specialized requirements
+        </div>
+    </div>
+
+    <div class="main-heading">📦 Option 2: Project-Based Packages</div>
+
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="package-name">🥉 Basic Package</div>
+            <div class="package-price">$200 - $400</div>
+            <div class="package-duration">⏱️ 1-2 weeks delivery</div>
+            
+            <div class="package-features">
+                <strong style="color: #1f4e79;">Perfect for:</strong>
+                <ul>
+                    <li>✅ Landing pages & portfolios</li>
+                    <li>✅ Simple CRUD applications</li>
+                    <li>✅ Basic database integration</li>
+                    <li>✅ Contact forms & user registration</li>
+                </ul>
+                
+                <strong style="color: #1f4e79;">Includes:</strong>
+                <ul>
+                    <li>🎁 3 days free support</li>
+                    <li>📱 Mobile responsive design</li>
+                    <li>📋 Basic documentation</li>
+                    <li>🔐 Standard security features</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-card featured">
+            <div class="package-name">🥈 Standard Package</div>
+            <div class="package-price">$500 - $800</div>
+            <div class="package-duration">⏱️ 2-4 weeks delivery</div>
+            
+            <div class="package-features">
+                <strong style="color: #1f4e79;">Perfect for:</strong>
+                <ul>
+                    <li>✅ Multi-page business applications</li>
+                    <li>✅ User authentication & roles</li>
+                    <li>✅ Advanced database design</li>
+                    <li>✅ API development</li>
+                </ul>
+                
+                <strong style="color: #1f4e79;">Includes:</strong>
+                <ul>
+                    <li>🎁 1 week free support</li>
+                    <li>🎥 Video walkthrough tutorial</li>
+                    <li>📚 Comprehensive documentation</li>
+                    <li>🚀 Performance optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-card">
+            <div class="package-name">🥇 Premium Package</div>
+            <div class="package-price">$1000 - $1500</div>
+            <div class="package-duration">⏱️ 4-8 weeks delivery</div>
+            
+            <div class="package-features">
+                <strong style="color: #1f4e79;">Perfect for:</strong>
+                <ul>
+                    <li>✅ Enterprise management systems</li>
+                    <li>✅ Inventory & ERP solutions</li>
+                    <li>✅ Advanced integrations</li>
+                    <li>✅ Complex business logic</li>
+                </ul>
+                
+                <strong style="color: #1f4e79;">Includes:</strong>
+                <ul>
+                    <li>🎁 2 weeks free support</li>
+                    <li>📋 Detailed technical documentation</li>
+                    <li>🚀 Deployment assistance</li>
+                    <li>🎓 User training sessions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="grid-column: span 2;">
+            <div class="pricing-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%); border: 2px dashed #4472c4;">
+                <div class="package-name" style="color: #4472c4;">🔧 Custom Solutions</div>
+                <div class="package-price" style="color: #4472c4;">Quote on Request</div>
+                <div class="package-duration">⏱️ Timeline varies</div>
+                
+                <p style="font-size: 11pt; color: #555; text-align: center;">
+                    <strong>For unique requirements:</strong> Complex integrations, specialized APIs, enterprise solutions, or projects requiring custom architecture and specialized expertise.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-heading">💳 Payment Terms & Schedule</div>
+
+    <table class="payment-table">
+        <thead>
+            <tr>
+                <th>Payment Method</th>
+                <th>Schedule</th>
+                <th>Benefits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Hourly Projects</strong></td>
+                <td>Weekly invoicing<br>Transparent time tracking</td>
+                <td>• Flexible scope adjustments<br>• Pay only for actual work<br>• Regular progress updates</td>
+            </tr>
+            <tr>
+                <td><strong>Fixed Price Projects</strong></td>
+                <td>30% upfront<br>50% at milestone<br>20% on completion</td>
+                <td>• Predictable costs<br>• Milestone-based delivery<br>• Risk-free development</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <div class="sub-heading" style="margin-top: 0;">💳 Accepted Payment Methods</div>
+            <ul style="margin-left: 20px; font-size: 10pt;">
+                <li>PayPal (International)</li>
+                <li>Payoneer (Global)</li>
+                <li>Bank Transfer</li>
+                <li>Cryptocurrency (Bitcoin, USDT)</li>
+            </ul>
+        </div>
+        
+        <div class="flex-item">
+            <div class="sub-heading" style="margin-top: 0;">⚡ Processing Times</div>
+            <ul style="margin-left: 20px; font-size: 10pt;">
+                <li>PayPal: Instant</li>
+                <li>Payoneer: 1-2 business days</li>
+                <li>Bank: 3-5 business days</li>
+                <li>Crypto: Instant confirmation</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-heading">🎁 Value-Added Services (FREE)</div>
+
+    <div class="value-box">
+        <div class="sub-heading" style="margin-top: 0; color: #28a745;">Included at No Extra Cost:</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 10pt;">
+            <div>
+                <ul>
+                    <li>🚀 Working prototype (2-3 days)</li>
+                    <li>📱 Mobile responsive design</li>
+                    <li>🔒 Basic security implementation</li>
+                    <li>⚡ Performance optimization</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>📚 Project documentation</li>
+                    <li>🌐 Cross-browser compatibility</li>
+                    <li>🎥 Setup video tutorials</li>
+                    <li>📞 Email & phone support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-heading">💡 Why Choose These Rates?</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 20px 0;">
+        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 18pt; color: #28a745;">🎯</div>
+            <div style="font-weight: bold; color: #1f4e79;">Competitive Pricing</div>
+            <div style="font-size: 10pt; color: #666;">Market-aligned rates for quality development</div>
+        </div>
+        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 18pt; color: #4472c4;">⚡</div>
+            <div style="font-weight: bold; color: #1f4e79;">Fast Delivery</div>
+            <div style="font-size: 10pt; color: #666;">Efficient development with proven methodologies</div>
+        </div>
+        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 18pt; color: #dc3545;">🛡️</div>
+            <div style="font-weight: bold; color: #1f4e79;">Risk-Free</div>
+            <div style="font-size: 10pt; color: #666;">See working prototype before final payment</div>
+        </div>
+    </div>
+
+    <div class="guarantee-box">
+        <div class="sub-heading" style="margin-top: 0; color: #f57c00;">🛡️ Satisfaction Guarantee</div>
+        <div style="font-size: 11pt;">
+            <strong>100% Money-Back Promise:</strong> If you're not completely satisfied with the delivered work, I'll provide revisions or refund the undelivered portion. Your success is my priority.
+        </div>
+    </div>
+
+    <div class="main-heading">📈 Investment ROI</div>
+    <div class="content">
+        <div style="background: linear-gradient(135deg, #e8f5e8 0%, #ffffff 100%); padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <strong style="color: #28a745;">Typical Return on Investment:</strong>
+            <ul style="margin: 10px 0; font-size: 11pt;">
+                <li><strong>Basic Package ($200-400):</strong> 200-400% ROI within 3-6 months</li>
+                <li><strong>Standard Package ($500-800):</strong> 300-600% ROI within 6-12 months</li>
+                <li><strong>Premium Package ($1000-1500):</strong> 400-800% ROI within 12-18 months</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <strong>Competitive rates for high-quality development. Prices may be adjusted based on project complexity and specific requirements.</strong><br>
+        <em>All prices are in USD. Custom quotes available for unique requirements. Terms and conditions apply.</em>
+    </div>
+
+    <div class="contact-box">
+        <h2>🚀 Ready to Start Your Project?</h2>
+        <p style="font-size: 12pt; margin-bottom: 20px;">Get a detailed quote and timeline within 3 hours!</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
+            <div>
+                <strong>📧 Email:</strong><br>
+                mazen.eldar.dev@gmail.com
+                <br><br>
+                <strong>📱 Phone:</strong><br>
+                +20 1019877482
+            </div>
+            <div>
+                <strong>⏰ Response Time:</strong><br>
+                Within 3 hours maximum
+                <br><br>
+                <strong>🆓 Free Consultation:</strong><br>
+                30-minute project discussion
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; font-size: 12pt; font-weight: bold;">
+            💡 Contact me today for your free project consultation and working prototype demonstration!
+        </div>
+    </div>
+</body>
+</html>
